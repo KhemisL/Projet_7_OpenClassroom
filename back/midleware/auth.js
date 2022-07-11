@@ -1,21 +1,40 @@
-const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
+const jwt = require("jsonwebtoken")
+const userModel = require("../models/detail_user")
 
 
-module.exports = (req,res,next)=>{
-    try{
-        //recuperer le TOKEN dans le headers authorization (bearer)
-            const token = req.headers.authorization.split(" ")[1];
-            const decoded = jwt.verify(token, process.env.KEY_TOKEN)
-        //recuperer le userId a linterieur du token
-            const userIdDecoded = decoded.userId;
-        //si cest bon pass au middleware suivant
-            if(req.body.userId && req.body.userId !== userIdDecoded){
-                throw "UserId non valable"
-            }else{
+module.exports.checkUser = (req, res, next) =>{
+    const token = req.cookies.jwt
+    if (token) {
+        jwt.verify(token, process.env.KEY_TOKEN, async (err, decodedToken) =>{
+            if (err) {
+                res.locals.user = null
+                res.cookie("jwt", "", {maxAge: 1})
+                next()
+            }else {
+                let user = await userModel.findById(decodedToken.id)
+                res.locals.user = user
                 next()
             }
-    }catch (err){
-        res.status(403).json({err})
+        })
+    }else {
+        res.locals.user = null
+        next()
+    }
+}
+
+
+module.exports.requireAuth = (req, res, next) =>{
+    const token = req.cookies.jwt
+    if (token) {
+        jwt.verify(token, process.env.KEY_TOKEN, async (err, decodedToken) =>{
+            if (err) {
+                console.log(err)
+            }else{
+                console.log(decodedToken.id)
+                next()
+            }
+        })
+    }else{
+        console.log("no token");
     }
 }

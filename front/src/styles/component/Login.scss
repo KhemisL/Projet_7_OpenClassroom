@@ -1,0 +1,63 @@
+#log-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    label{
+        font-size: 14px;
+        font-weight: 400;
+        position: relative;
+        left: -270px;
+        top: 25px;
+    }
+
+    .nom{
+        left: -273px;
+    }
+    .prenom{
+        left: -265px;
+    }
+    .pseudo{
+        left: -267px;
+    }
+    .password{
+        left: -249px;
+    }
+    .email{
+        left: -272px;
+    }
+
+    input{
+        width: 75%;
+        height: 70px;
+        padding-left: 35px;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 700;
+        background: #f0f0f0;
+        margin-bottom: 15px;
+    }
+
+
+    .btn-login{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background: #FFD7D7;
+        padding-left: 0px;
+        cursor: pointer;
+    }
+}
+
+.fa-solid{
+    font-size: 30px;
+    
+    cursor: pointer;
+    transition: 1s ease;
+    &:hover{
+        color: rgba(0, 0, 0, 0.562);
+    }
+}
