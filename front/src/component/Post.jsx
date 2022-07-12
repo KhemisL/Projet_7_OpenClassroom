@@ -7,19 +7,16 @@ const Post = () => {
     const [description, setDescription] = useState("")
     const [file, setFile] = useState()
     const id = useContext(UserIdContext)
+    
 
     const handlePicture = (e) => {
         setImageUrl(URL.createObjectURL(e.target.files[0]))
 
         setFile(e.target.files[0])
     }
-    // const concelPost = () =>{
-    //     setDescription("")
-    //     setImageUrl("")
-    //     setFile("")
-    // }
+    
     const log =(e)=> {
-
+        e.preventDefault()
         if (description || imageUrl) {
             const data = new FormData()
             data.append("userId" , id)
@@ -32,24 +29,23 @@ const Post = () => {
             .then(res=> console.log(res))
             .catch(err => console.log(err))
 
-            
+           
 
         }else{
             alert("veuillez entrez un message")
         }
     }
     return (
-        <div>
+        <div className="container-global-post-form">
             <h4>Home</h4>
             <div className="content-post">
-                <img src="" alt="Photo de profile" />
                 <form action="" id="form-data" onSubmit={log}>
-                    <textarea name="write" id="write" placeholder="Que voulez-vous dire?" onChange={(e) => setDescription(e.target.value)}  value={description}/>
+                    <textarea name="write" id="write"cols="40" rows="3"  placeholder="Que voulez-vous dire?" onChange={(e) => setDescription(e.target.value)}  value={description}/>
 
                     <div className="btn-all">
                             <i className="fa-solid fa-image"></i>
                             <input type="file" id="file-upload" name=" file" accept=".jpg, .jpeg, .png"  onChange={(e)=> handlePicture(e)} />
-                            <input type="submit" value="Poste" />
+                            <input className='btn-post' type="submit" value="Poste" />
                     </div>
                     
                 </form>

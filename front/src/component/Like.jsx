@@ -9,7 +9,8 @@ const Like = ({post}) => {
 
     const[like, setLike] = useState(false)
     const id = useContext(UserIdContext)
-
+    
+    
 
 const liked = () => {
         axios({

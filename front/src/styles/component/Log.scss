@@ -1,5 +1,7 @@
 
-
+$primary-color: #FD2D01;
+$secondary-color: #FFD7D7;
+$tertiary-color: #4E5166;
 .container-global{
     height: 100vh;
     display: flex;
@@ -12,7 +14,7 @@
         align-items: center;
         justify-content: center;
         img{
-            width: 700px;
+            width: 70%;
 
         }
     }
@@ -52,10 +54,91 @@
                 font-size: 22px;
                 font-weight: 400;
                 cursor: pointer;
+                color: #000;
             }
 
             .active-li{
                 border-bottom: 2px solid #FFD7D7;
+            }
+        }
+    }
+}
+
+
+/*************************************      LAPTOP 1024PX      **************************************/
+
+
+@media (max-width : 1024px){
+    .container-global{
+        
+        .container-img{
+            width: 50%;
+            img{
+                width: 75%;
+            }
+        }
+
+        .container-content{
+            width: 50%;
+
+            h1 {
+                    font-size: 33px;
+                    font-weight: 500;
+                    color: #000;
+                    align-self: flex-start;
+                    margin-left: 50px;
+                    margin-bottom: 20px;
+            
+                    span {
+                        font-size: 43px;
+                        font-weight: 900;
+                        color: #FD2D01;
+                    }
+                }
+        }
+    }
+}
+
+
+/*************************************      Tablette 768px     **************************************/
+
+@media (max-width : 768px) {
+    .container-global{
+        .container-img{
+            display: none;
+        }
+
+        .container-content{
+            width: 100%;
+            border: none;
+            margin: 20px 0px 20px 10px;
+        }
+    }
+}
+
+
+
+@media (max-width : 375px) {
+    .container-global {
+       padding: 0px;
+       margin-right: 10px;
+
+
+    .container-content {
+        margin-top: 40px;
+            h1 {
+                font-size: 30px;
+                font-weight: 500;
+                color: #000;
+                align-self: flex-start;
+                margin-left: 50px;
+                margin-bottom: 0px;
+    
+                span {
+                    font-size: 40px;
+                    font-weight: 900;
+                    color: #FD2D01;
+                }
             }
         }
     }

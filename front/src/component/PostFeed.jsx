@@ -6,15 +6,21 @@ import CardThread from "../component/CardThread"
 const PostFeed = () => {
     const [post, setPoste] = useState([])
 
+    // useEffect(() =>{
+    //     axios({
+    //             method: "get",
+    //             url:"http://localhost:3000/api/poste"
+    //         })
+    //         .then((res) => setPoste(res.data))
+    //         .catch(err => console.log(err))
+    // },[])
+    
     useEffect(() =>{
-        axios({
-                method: "get",
-                url:"http://localhost:3000/api/poste"
-            })
-            .then((res) => setPoste(res.data))
-            .catch(err => console.log(err))
+        axios("http://localhost:3000/api/poste")
+        .then((res) => setPoste(res.data))
+        .catch(err => console.log(err))
     },[post])
-
+    
  
 
    

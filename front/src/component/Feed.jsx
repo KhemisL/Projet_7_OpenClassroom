@@ -18,13 +18,9 @@ const feed = () => {
                
             </div>
             <div className="nav-link">
-            <NavLink to="/profil"><i className="fa-solid fa-user"></i></NavLink> 
-                
-             
+            <NavLink to="/profil"><i className="fa-solid fa-user"></i></NavLink>    
              <Logout/>
             </div>
-            
-             
         </div>
     );
 };

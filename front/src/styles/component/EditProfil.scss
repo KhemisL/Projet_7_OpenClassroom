@@ -1,7 +1,11 @@
+$primary-color: #FD2D01;
+$secondary-color: #FFD7D7;
+$tertiary-color: #4E5166;
+
 .fa-user{
     margin: 0px 50px;
     border: none;
-    color: #000;
+    color: $primary-color;
     border-radius: 20px;
     font-size: 30px;
     cursor: pointer;

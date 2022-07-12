@@ -13,7 +13,7 @@ const CardThread = ({post}) => {
 
     const createDate = (date) =>{
         
-        let options = {hour: "2-digit", minute: "2-digit", second: "2-digit",weekday:"long", year:"numeric", month:"short", day: "numeric"};
+        let options = {hour: "2-digit", minute: "2-digit",weekday:"long", year:"numeric", month:"short", day: "numeric"};
         let timeStamp = Date.parse(date)
         let dateData = new Date (timeStamp).toLocaleDateString("fr-FR", options)
         return dateData.toString()
@@ -48,14 +48,14 @@ const CardThread = ({post}) => {
         axios(`http://localhost:3000/api/auth`)
         .then((res)=> setData(res.data))
         .catch(err => console.log(err))
-    },[textUpdate])
+    },[])
     
     return (
         <div className="container-card-thread">
+
+           
             <div className="pseudo-data">
                
-                     
-                
                 <span>{createDate(post.createdAt)}</span>
             </div>
             
@@ -67,16 +67,15 @@ const CardThread = ({post}) => {
                  
             </div>
             <div className="icon">
+                 {id === post.userId && <i onClick={() =>setUpdating(!updating)} className="fa-solid fa-pen"></i> }
                 <div className="like">
                 <Like post={post}/>
                 <p>{post.likes}</p>
                 </div>
                 
             <div className="edit">
-
-                {id === post.userId && <i onClick={() =>setUpdating(!updating)} className="fa-solid fa-pen"></i> }
-                {id === post.userId && <i onClick={suppr} className="fa-solid fa-trash"></i> }
                 
+                {id === post.userId && <i onClick={suppr} className="fa-solid fa-xmark"></i> }
             </div>
                 
             </div>

@@ -1,38 +1,33 @@
+@import url("../Variable.scss");
+$primary-color: #FD2D01;
+$secondary-color: #FFD7D7;
+$tertiary-color: #4E5166;
+
 #log-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 0px 70px;
 
     label{
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 700;
+        align-self: flex-start;
         position: relative;
-        left: -270px;
         top: 25px;
+        left: 35px;
+        color: $tertiary-color;
     }
 
-    .nom{
-        left: -273px;
-    }
-    .prenom{
-        left: -265px;
-    }
-    .pseudo{
-        left: -267px;
-    }
-    .password{
-        left: -249px;
-    }
-    .email{
-        left: -272px;
-    }
+   
 
     input{
-        width: 75%;
+        width: 100%;
         height: 70px;
         padding-left: 35px;
+        padding-top: 12px;
         border: none;
         outline: none;
         border-radius: 8px;
@@ -46,7 +41,9 @@
     .btn-login{
         margin-top: 0px;
         margin-bottom: 0px;
-        background: #FFD7D7;
+        padding-top: 0px;
+        background: $primary-color;
+        color: $secondary-color;
         padding-left: 0px;
         cursor: pointer;
     }
@@ -59,5 +56,98 @@
     transition: 1s ease;
     &:hover{
         color: rgba(0, 0, 0, 0.562);
+    }
+}
+
+
+
+/*************************************      LAPTOP 1024PX      **************************************/
+
+@media (max-width : 1024px) {
+    #log-form{
+        padding: 0px 60px;
+        label {
+                font-size: 14px;
+                font-weight: 400;
+                align-self: flex-start;
+                position: relative;
+                top: 25px;
+                left: 35px;
+            }
+        
+        
+        
+            input {
+                width: 100%;
+                height: 60px;
+                padding-left: 35px;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                font-size: 18px;
+                font-weight: 700;
+                background: #f0f0f0;
+                margin-bottom: 15px;
+            }
+        
+        
+            .btn-login {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background: $primary-color;
+                color: $secondary-color;
+                padding-left: 0px;
+                cursor: pointer;
+            }
+    }
+    
+}
+
+
+@media (max-width : 900px){
+    #log-form{
+        padding: 0px 40px;
+    }
+}
+
+
+@media (max-width : 425px) {
+    #log-form {
+        padding: 0px 40px;
+
+
+        label {
+                font-size: 14px;
+                font-weight: 400;
+                align-self: flex-start;
+                position: relative;
+                top: 25px;
+                left: 35px;
+            }
+        
+        
+        
+            input {
+                width: 100%;
+                height: 55px;
+                padding-left: 35px;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                font-size: 15px;
+                font-weight: 700;
+                background: #f0f0f0;
+                margin-bottom: 5px;
+            }
+        
+        
+            .btn-login {
+                margin-top: 15px;
+                margin-bottom: 0px;
+                background: $primary-color;
+                color: $secondary-color;
+                padding-left: 0px;
+                cursor: pointer;
+            }
     }
 }
