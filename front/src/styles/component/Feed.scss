@@ -9,7 +9,7 @@ $tertiary-color: #4E5166;
     justify-content: center;
     align-items: flex-start;
     .content{
-        width: 27%;
+        width: 30%;
         height: 100vh;
     }
 
@@ -54,7 +54,10 @@ $tertiary-color: #4E5166;
                             width: 100%;
                             font-size: 18px;
                             margin-bottom: 30px;
-                            
+                            height: auto;
+                            padding: 15px;
+                            border: 2px solid $secondary-color;
+                            border-radius: 8px;
                             
                         }
 
@@ -66,13 +69,29 @@ $tertiary-color: #4E5166;
 
                             #file-upload{
                                 position: absolute;
-                                opacity: 0;
-                                width: 30px;
+                                width: 150px;
                                 height: 30px;
-                                border: 2px solid;
+                               color: $primary-color;
                                 
                             }
+                            ::-webkit-file-upload-button{
+                                opacity: 0;
+                                width: 30px;
+                                margin-top: 5px;
+                            }
 
+                            .container-delete{
+                                    margin-right: 70px;
+                                    display: flex;
+                                    align-items: center; 
+                                    padding: 0px 10px;
+                                    
+
+                                    i{
+                                        font-size: 15px;
+                                        color: $primary-color;
+                                    }
+                            }
                             .btn-post{
                                 padding: 0px 25px;
                                 border-radius: 25px;
@@ -118,6 +137,93 @@ $tertiary-color: #4E5166;
         padding: 15px 30px;
         align-items: center;
         color: $primary-color;
+
+        .fa-user {
+                margin: 0px 50px;
+                border: none;
+                color: $primary-color;
+                border-radius: 20px;
+                font-size: 30px;
+                cursor: pointer;
+            }
     }
     
+}
+
+
+/*************************************** Laptop 1440px *****************************/
+
+
+
+
+@media (max-width: 1440px) {
+    .container-global-feed{
+        .content{
+            width: 35%;
+        }
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    .container-global-feed {
+        .content {
+            width: 40%;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container-global-feed {
+        .content {
+            width: 60%;
+        }
+
+
+
+
+                .nav-link {
+                    position: fixed;
+                    top: 100%;
+                    transform: translateY(-100%);
+                    background: $primary-color;
+                    height: 60px;
+                    width: 100%;
+                    display: flex;
+                    padding: 0px 0px;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: #fff;
+                    padding: 0px 30px;
+
+
+                    .fa-user {
+                            margin: 0px 0px;
+                            border: none;
+                            color: #fff;
+                            border-radius: 20px;
+                            font-size: 30px;
+                            cursor: pointer;
+                        }
+                    
+
+                }
+    }
+}
+@media (max-width: 600px) {
+    .container-global-feed {
+        .content {
+            width: 63%;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .container-global-feed {
+        .content {
+            width: 90%;
+        }
+    }
 }

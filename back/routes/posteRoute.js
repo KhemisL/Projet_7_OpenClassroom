@@ -5,7 +5,7 @@ const auth = require("../Midleware/auth")
 const multer = require("../Midleware/multer")
 const {checkUser} = require("../midleware/auth")
 
-router.post("/" , multer,  posteCtrl.createPoste)
+router.post("/", multer,  posteCtrl.createPoste)
 router.get("/",  posteCtrl.getAllPoste)
 router.put("/:id", multer, posteCtrl.modifyPoste)
 router.delete("/:id", posteCtrl.deletePoste)

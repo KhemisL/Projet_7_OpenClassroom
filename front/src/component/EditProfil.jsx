@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Feed from "../component/Feed"
 import Profil from '../pages/Profil';
 import logo from "../assets/logo-groupomania.PNG"
+import { NavLink } from 'react-router-dom';
 const EditProfil = ({props}) => {
 
       
@@ -19,10 +20,10 @@ const EditProfil = ({props}) => {
     },[])
 
 
-    const back = () =>{
+    // const back = () =>{
 
-        window.location = "/home"
-    }
+    //     window.location = "/home"
+    // }
 
     return (
         <div >
@@ -31,11 +32,11 @@ const EditProfil = ({props}) => {
             </div>
             
             <div className="container-profil">
-
+                <div className="container-header">
+                    <img src={logo} alt="logo entreprise" />
+                    <NavLink to="/home"><div className="container-profil-close"> <i className="fa-solid fa-xmark"></i></div></NavLink>
+                </div>
                 
-                
-                <img src={logo} alt="" />
-                <i onClick={back} className="fa-solid fa-xmark"></i>
                 <div className="information">
                     <h2>Pseudo</h2>
                     <h3>{data.pseudo}</h3>

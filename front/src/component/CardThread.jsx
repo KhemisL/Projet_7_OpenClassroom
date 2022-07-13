@@ -67,7 +67,7 @@ const CardThread = ({post}) => {
                  
             </div>
             <div className="icon">
-                 {id === post.userId && <i onClick={() =>setUpdating(!updating)} className="fa-solid fa-pen"></i> }
+                 {id === post.userId && <div className='container-modify'><i onClick={() =>setUpdating(!updating)} className="fa-solid fa-pen"></i></div>}
                 <div className="like">
                 <Like post={post}/>
                 <p>{post.likes}</p>
@@ -75,7 +75,7 @@ const CardThread = ({post}) => {
                 
             <div className="edit">
                 
-                {id === post.userId && <i onClick={suppr} className="fa-solid fa-xmark"></i> }
+                {id === post.userId && <div className='container-suppr'><i onClick={suppr} className="fa-solid fa-xmark"></i></div>  }
             </div>
                 
             </div>

@@ -30,7 +30,7 @@ const Signup = () => {
         })
         .then((res)=> {
             
-            if (res.data.message) {
+            if (!res.data.message) {
                 emailError.innerHTML = "res.data.errors.email"
                 passwordError.innerHTML = "res.data.errors.password"
             }else{

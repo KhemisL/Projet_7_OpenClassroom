@@ -17,13 +17,12 @@ const Post = () => {
     
     const log =(e)=> {
         e.preventDefault()
-        if (description || imageUrl) {
+        if (description) {
             const data = new FormData()
             data.append("userId" , id)
             data.append("description", description)
-            if (file) {
-                data.append("image", file)
-            }
+            data.append("image", file)
+            
 
             axios.post("http://localhost:3000/api/poste", data)
             .then(res=> console.log(res))
@@ -35,6 +34,12 @@ const Post = () => {
             alert("veuillez entrez un message")
         }
     }
+
+    const suppr = () =>{
+        setFile()
+        setImageUrl("")
+        window.location.reload()
+    }
     return (
         <div className="container-global-post-form">
             <h4>Home</h4>
@@ -45,7 +50,9 @@ const Post = () => {
                     <div className="btn-all">
                             <i className="fa-solid fa-image"></i>
                             <input type="file" id="file-upload" name=" file" accept=".jpg, .jpeg, .png"  onChange={(e)=> handlePicture(e)} />
+                            <div className='container-delete'><i onClick={suppr} className="fa-solid fa-xmark"></i></div>
                             <input className='btn-post' type="submit" value="Poste" />
+                            
                     </div>
                     
                 </form>

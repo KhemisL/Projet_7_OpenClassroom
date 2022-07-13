@@ -19,7 +19,7 @@ const PostFeed = () => {
         axios("http://localhost:3000/api/poste")
         .then((res) => setPoste(res.data))
         .catch(err => console.log(err))
-    },[post])
+    },[])
     
  
 

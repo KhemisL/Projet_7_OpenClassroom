@@ -2,16 +2,15 @@ const Poste = require("../Models/posteModel")
 
 exports.createPoste = (req, res)=>{
 
-    const infoPoste = req.body
-
-    const poste = new Poste({
-        ...infoPoste,
+    const poste = new Poste(req.file ? {
+       
         userId: req.body.userId,
         description: req.body.description,
         imageUrl: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`,
-        likes: 0,
-        dislikes: 0
-    })
+    } : {
+        userId: req.body.userId,
+        description: req.body.description,
+     })
 
     poste.save()
     .then((poste)=> res.status(201).json(poste))
@@ -61,25 +60,6 @@ exports.deletePoste = (req, res)=>{
 }
 
 exports.likePoste = (req, res)=>{
-
-    // Poste.findOne({_id: req.params.id})
-    // .then((post)=>{
-
-    //     if (!post.usersLiked.includes(req.body.userId) && req.body.like === 1) {
-            
-    //         Poste.updateOne({_id: req.params.id}, {$inc: {likes: 1}, $push: {usersLiked: req.body.userId}} )
-    //             .then(()=>res.status(200).json({message: "Utilisateur like +1"}))
-    //             .catch((err)=> res.status(403).json({err}))  
-    //     }
-        
-    //     if (post.usersLiked.includes(req.body.userId) && req.body.like === 0) {
-    //         Poste.updateOne({_id: req.params.id}, {$inc: {likes: -1}, $pull: {usersLiked: req.body.userId}} )
-    //             .then(()=>res.status(200).json({message: "Utilisateur supprime like 0"}))
-    //             .catch((err)=> res.status(403).json({err}))     
-    //     }
-    // })
-    // .catch(err => res.status(403).json({err}))
-
 
     try{
        Poste.findByIdAndUpdate(
