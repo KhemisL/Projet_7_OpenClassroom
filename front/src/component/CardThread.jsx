@@ -29,7 +29,8 @@ const CardThread = ({post}) => {
         })
         .then((res)=> setTextUpdate(res.data.description))
         .catch(err => console.log(err))
-        setUpdating(false)    
+        setUpdating(false)  
+          
     }
 
 
@@ -61,7 +62,7 @@ const CardThread = ({post}) => {
             
             <div className="content">
                 {updating === false && <p className="description">{post.description}</p>}
-                {updating && <div><textarea defaultValue={post.description} onChange={(e) => setTextUpdate(e.target.value)}/> <button onClick={modify}>valider</button></div>    }
+                {updating && <div className='container-update'><textarea className='update' defaultValue={post.description} onChange={(e) => setTextUpdate(e.target.value)}/> <button onClick={modify}>valider</button></div>    }
                 
                 {post.imageUrl && <img src={post.imageUrl} alt="image du poste" />}
                  

@@ -39,6 +39,11 @@ const liked = () => {
         setLike(false)
         
     }
+
+
+    
+    
+    
     useEffect(()=>{
         if (post.usersLiked.includes(id)) {
             setLike(true)

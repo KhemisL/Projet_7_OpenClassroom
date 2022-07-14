@@ -81,10 +81,10 @@ $tertiary-color: #4E5166;
                             }
 
                             .container-delete{
-                                    margin-right: 70px;
-                                    display: flex;
-                                    align-items: center; 
-                                    padding: 0px 10px;
+                                     margin-right: 60px;
+                                     display: flex;
+                                     align-items: center; 
+                                     padding: 0px 10px;
                                     
 
                                     i{
@@ -169,7 +169,7 @@ $tertiary-color: #4E5166;
 @media (max-width: 1024px) {
     .container-global-feed {
         .content {
-            width: 40%;
+            width: 50%;
         }
     }
 }
@@ -181,6 +181,32 @@ $tertiary-color: #4E5166;
             width: 60%;
         }
 
+                .post {
+                   
+                    
+        
+                    .content-post {
+                        display: flex;
+                        height: auto;
+        
+                        form {
+                            
+        
+                            .btn-all {
+        
+        
+                                .container-delete {
+                                    margin-right: 30px;  
+                                }
+        
+                                
+                            }
+                        }
+                    }
+                }
+        
+        
+                
 
 
 

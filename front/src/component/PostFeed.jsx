@@ -3,23 +3,23 @@ import axios from "axios"
 import { useState } from 'react';
 import { useEffect } from 'react';
 import CardThread from "../component/CardThread"
-const PostFeed = () => {
-    const [post, setPoste] = useState([])
+const PostFeed = ({post}) => {
+    // const [post, setPoste] = useState([])
 
-    // useEffect(() =>{
-    //     axios({
-    //             method: "get",
-    //             url:"http://localhost:3000/api/poste"
-    //         })
-    //         .then((res) => setPoste(res.data))
-    //         .catch(err => console.log(err))
-    // },[])
+    // // useEffect(() =>{
+    // //     axios({
+    // //             method: "get",
+    // //             url:"http://localhost:3000/api/poste"
+    // //         })
+    // //         .then((res) => setPoste(res.data))
+    // //         .catch(err => console.log(err))
+    // // },[])
     
-    useEffect(() =>{
-        axios("http://localhost:3000/api/poste")
-        .then((res) => setPoste(res.data))
-        .catch(err => console.log(err))
-    },[])
+    // useEffect(() =>{
+    //     axios("http://localhost:3000/api/poste")
+    //     .then((res) => setPoste(res.data))
+    //     .catch(err => console.log(err))
+    // },[])
     
  
 

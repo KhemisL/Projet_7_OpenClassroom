@@ -51,7 +51,7 @@ const Post = () => {
                             <i className="fa-solid fa-image"></i>
                             <input type="file" id="file-upload" name=" file" accept=".jpg, .jpeg, .png"  onChange={(e)=> handlePicture(e)} />
                             <div className='container-delete'><i onClick={suppr} className="fa-solid fa-xmark"></i></div>
-                            <input className='btn-post' type="submit" value="Poste" />
+                            <input className='btn-post' type="submit" value="Valider" />
                             
                     </div>
                     

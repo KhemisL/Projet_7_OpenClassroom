@@ -7,18 +7,21 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { UserIdContext } from "./component/AppContext";
+import Feed from "./component/Feed";
 function App() {
  const [uid, setUid] = useState(null)
-
+ 
  useEffect( () =>{
 
       axios("http://localhost:3000/jwtid", {withCredentials: true})
      .then((res) => setUid(res.data))
      .catch((err)=> console.log(err))
-     
 
      
  },[uid])
+
+
+    
 
   return (
 
@@ -27,7 +30,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Profil/>}/>
-            <Route path="/home" element={<Home/>}/>
+            <Route path="/home" element={<Feed/>}/>
             <Route path="/profil" element={<EditProfil props={uid}/>}/>
           </Routes>
         </BrowserRouter>
