@@ -9,9 +9,6 @@ import { NavLink } from 'react-router-dom';
 const EditProfil = ({props}) => {
 
       
-    const [pseudo, setPseudo] = useState("")
-    const [lastName, setLastName] = useState("")
-    const [fitstName, setFirstName] = useState("")
     const [data, setData] =useState("")
     useEffect(()=>{
         axios(`http://localhost:3000/api/auth/${props}`)
@@ -19,11 +16,6 @@ const EditProfil = ({props}) => {
         .catch(err => console.log(err))
     },[])
 
-
-    // const back = () =>{
-
-    //     window.location = "/home"
-    // }
 
     return (
         <div >
@@ -34,7 +26,7 @@ const EditProfil = ({props}) => {
             <div className="container-profil">
                 <div className="container-header">
                     <img src={logo} alt="logo entreprise" />
-                    <NavLink to="/home"><div className="container-profil-close"> <i className="fa-solid fa-xmark"></i></div></NavLink>
+                    <NavLink className="close-profil" to="/home"><div className="container-profil-close"> <i className="fa-solid fa-xmark"></i></div></NavLink>
                 </div>
                 
                 <div className="information">

@@ -19,7 +19,7 @@ const Logout = () => {
     }
     return (
         <div onClick={logout}>
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <i className="fa-solid fa-arrow-right-from-bracket"></i>
         </div>
     );
 };

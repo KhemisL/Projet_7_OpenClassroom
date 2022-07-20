@@ -14,12 +14,13 @@ exports.signup = (req, res)=>{
                 firstName: req.body.firstName,
                 pseudo: req.body.pseudo,
                 email : emailCrypter,
-                password: hash
+                password: hash,
+                isAdmin: req.body.isAdmin
             })
 
             users.save()
             .then(()=> res.status(201).json({message: "Utilisateur crée"}))
-            .catch(err => res.status(403).send(err))
+            .catch(() => res.status(403).send({message: "Email ou Pseudo déja utilisé"}))
             
         })
         .catch(err => res.status(403).json(err))

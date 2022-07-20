@@ -23,7 +23,7 @@ const liked = () => {
         .then((res)=> setLike(res.data.likes))
         .catch((err)=> console.log(err))
         setLike(true)
-       
+       window.location.reload()
     }
 
     const unliked = () => {
@@ -37,7 +37,7 @@ const liked = () => {
         .then((res)=> setLike(res.data.likes))
         .catch((err)=> console.log(err))
         setLike(false)
-        
+        window.location.reload()
     }
 
 
@@ -58,7 +58,7 @@ const liked = () => {
         <div>
             {id === null && (<p>Connectez vous pour aimer un post</p>)}
             {id && like === false && (
-                <i onClick={liked} class="fa-regular fa-heart"></i> 
+                <i onClick={liked} className="fa-regular fa-heart"></i> 
             )}
 
             {id && like === true && (

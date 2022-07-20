@@ -14,8 +14,9 @@ const Signup = () => {
 
     const handleSignup = (e) =>{
         e.preventDefault()
-        const emailError = document.querySelector(".email-error");
-        const passwordError = document.querySelector(".password-error");
+        const error = document.querySelector(".error");
+        const sign = document.querySelector(".sign");
+        
 
         axios({
             method: "post",
@@ -29,22 +30,16 @@ const Signup = () => {
             }
         })
         .then((res)=> {
-            
-            if (!res.data.message) {
-                emailError.innerHTML = "res.data.errors.email"
-                passwordError.innerHTML = "res.data.errors.password"
-            }else{
-                 window.location = "/home"
-            }
-                
-            
+            sign.innerHTML = "voter inscription a bien fonctonné, veuillez vous connecter"
+
         })
-        .catch((err)=> console.log(err))
+        .catch((err)=> error.innerHTML = "Email ou Pseudo déja pris")
     }
     return (
         
-            <form action=""  onSubmit={handleSignup} id="log-form">
-
+        <form  onSubmit={handleSignup} id="log-form">
+            <div className="error"></div>
+            <div className="sign"></div>
             <label htmlFor="lastName" className="nom">Nom</label>
             <input type="text" name='lastName' id='lastName' onChange={(e)=> setLastName(e.target.value) } value={lastName} />
             <div className="lastName-error"></div>
@@ -60,12 +55,13 @@ const Signup = () => {
 
             <label htmlFor="email" className="email">Email</label>
             <input type="text" name='email' id='email' onChange={(e)=> setEmail(e.target.value) } value={email} />
-            <div className="email-error"></div>
+            
 
             <label htmlFor="password" className="password">Mot de passe</label>
             <input type="password" name='password' id='password'  onChange={(e)=> setPassword(e.target.value) } value={password}/>
-            <div className="password-error"></div>
-            <input type="submit" value="Se connecter" className="btn-login" />
+            
+            <input type="submit" value="S'inscrire" className="btn-login" />
+
         </form>
         
     );

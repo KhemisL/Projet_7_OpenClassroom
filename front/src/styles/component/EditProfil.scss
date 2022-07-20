@@ -32,7 +32,9 @@ $tertiary-color: #4E5166;
         img {
                 width: 150px;
             }
-            
+            .close-profil{
+                text-decoration: none;
+            }
             .container-profil-close{
                 background: $primary-color;
                 display: flex;
