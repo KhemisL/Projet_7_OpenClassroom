@@ -5,12 +5,18 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { UserIdContext } from './AppContext';
 
-const Like = ({post}) => {
+const Like = ({post, set}) => {
 
     const[like, setLike] = useState(false)
     const id = useContext(UserIdContext)
     
-    
+    const modifyPost = () =>{
+        axios("http://localhost:3000/api/poste")
+                .then((res) => {
+                    set(res.data)
+                })
+                .catch(err => console.log(err))
+    }
 
 const liked = () => {
         axios({
@@ -20,10 +26,13 @@ const liked = () => {
                 id: id,
             }
         })
-        .then((res)=> setLike(res.data.likes))
+        .then((res)=> {
+            setLike(res.data.likes)
+            modifyPost()
+        } )
         .catch((err)=> console.log(err))
         setLike(true)
-       window.location.reload()
+       
     }
 
     const unliked = () => {
@@ -34,10 +43,13 @@ const liked = () => {
                 id: id,
             }
         })
-        .then((res)=> setLike(res.data.likes))
+        .then((res)=> {
+            setLike(res.data.likes)
+            modifyPost()
+        } )
         .catch((err)=> console.log(err))
         setLike(false)
-        window.location.reload()
+       
     }
 
 

@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useState, useContext } from 'react';
 import { UserIdContext } from './AppContext';
-const Post = () => {
+const Post = ({post, newpost, set}) => {
     const [imageUrl, setImageUrl] = useState(null)
     const [description, setDescription] = useState("")
     const [file, setFile] = useState()
@@ -25,10 +25,13 @@ const Post = () => {
             
 
             axios.post("http://localhost:3000/api/poste", data)
-            .then(res=> console.log(res))
+            .then(res=> {
+                 newpost = res.data;
+                 set([...post, newpost])
+            })
             .catch(err => console.log(err))
 
-            window.location.reload()
+            
            
 
         }else{
@@ -39,7 +42,7 @@ const Post = () => {
     const suppr = () =>{
         setFile()
         setImageUrl("")
-        window.location.reload()
+        
     }
     return (
         <div className="container-global-post-form">
