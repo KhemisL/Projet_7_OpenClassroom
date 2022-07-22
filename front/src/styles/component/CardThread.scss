@@ -1,7 +1,5 @@
-$primary-color: #FD2D01;
-$secondary-color: #FFD7D7;
-$tertiary-color: #4E5166;
 
+@import "../variable.scss";
 
 .container-card-thread{
     position: relative;
@@ -16,6 +14,7 @@ $tertiary-color: #4E5166;
     color: #000;
     margin-top: 20px;
     border-radius: 8px;
+    margin-bottom: 70px;
 
     
     .pseudo-data{
@@ -26,6 +25,10 @@ $tertiary-color: #4E5166;
         span{
             color: $tertiary-color;
         }
+    }
+
+    .container-content{
+        width: 100%;
     }
     .content{
         width: 100%;

@@ -42,7 +42,7 @@ const Post = ({post, newpost, set}) => {
     const suppr = () =>{
         setFile()
         setImageUrl("")
-        
+        window.location = "/home"
     }
     return (
         <div className="container-global-post-form">

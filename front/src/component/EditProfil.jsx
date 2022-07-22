@@ -3,7 +3,6 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Feed from "../component/Feed"
-import Profil from '../pages/Profil';
 import logo from "../assets/logo-groupomania.PNG"
 import { NavLink } from 'react-router-dom';
 const EditProfil = ({props}) => {
@@ -14,7 +13,7 @@ const EditProfil = ({props}) => {
         axios(`http://localhost:3000/api/auth/${props}`)
         .then((res)=> setData(res.data))
         .catch(err => console.log(err))
-    },[])
+    },[props])
 
 
     return (

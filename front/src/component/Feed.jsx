@@ -1,12 +1,11 @@
-import React, { Profiler } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Logout from './log/Logout';
 import Post from './Post';
-import { useState, useEffect, useContext } from 'react';
-import { UserIdContext } from './AppContext';
+import { useState, useEffect } from 'react';
 import axios from "axios";
 import CardThread from './CardThread';
-import VerifyAdminUpdate from './VerifyAdminUpdate';
+
 
 const Feed = () => {
 

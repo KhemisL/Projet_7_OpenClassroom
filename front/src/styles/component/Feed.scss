@@ -1,10 +1,8 @@
-$primary-color: #FD2D01;
-$secondary-color: #FFD7D7;
-$tertiary-color: #4E5166;
 
+@import "../variable.scss";
 
 .container-global-feed{
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -66,9 +64,16 @@ $tertiary-color: #4E5166;
                             width: 100%;
                             display: flex;
                             justify-content: space-between;
+                            
 
-                            #file-upload{
+                            .fa-image{
                                 position: absolute;
+                                cursor: pointer;
+                                
+                            }
+                            #file-upload{
+                                
+                                
                                 width: 150px;
                                 height: 30px;
                                color: $primary-color;
@@ -81,11 +86,12 @@ $tertiary-color: #4E5166;
                             }
 
                             .container-delete{
-                                     margin-right: 60px;
                                      display: flex;
                                      align-items: center; 
                                      padding: 0px 10px;
-                                    
+                                    position: relative;
+                                    left: -90px;
+                                    cursor: pointer;
 
                                     i{
                                         font-size: 15px;
@@ -100,10 +106,12 @@ $tertiary-color: #4E5166;
                                 color: $secondary-color;
                                 background: $primary-color;
                                 border: none;
+                                cursor: pointer;
                             }
                             
                             i{
                                 color: $primary-color;
+                                cursor: pointer;
                             }
                         }
                     }
@@ -160,6 +168,30 @@ $tertiary-color: #4E5166;
     .container-global-feed{
         .content{
             width: 35%;
+
+            .post {
+            
+            
+            
+                    .content-post {
+                        display: flex;
+                        height: auto;
+            
+                        form {
+            
+            
+                            .btn-all {
+            
+            
+                                .container-delete {
+                                   margin-left: 90px; 
+                                }
+            
+            
+                            }
+                        }
+                    }
+                }
         }
     }
 }
@@ -196,7 +228,7 @@ $tertiary-color: #4E5166;
         
         
                                 .container-delete {
-                                    margin-right: 30px;  
+                                    
                                 }
         
                                 

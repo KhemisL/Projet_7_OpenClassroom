@@ -52,10 +52,10 @@ const VerifyAdmin = ({props, test, set}) => {
     },[props])
 
     return (
-        <div>
+        <div className='container-content'>
             <div className="content">
                 {updating === false && <p className="description">{test.description}</p>}
-                {test.imageUrl && <img src={test.imageUrl} alt="image du poste" />}
+                {test.imageUrl && <img src={test.imageUrl} alt="poste" />}
                 {updating && <div className='container-update'><textarea className='update' defaultValue={test.description} onChange={(e) => setTextUpdate(e.target.value)}/> <button onClick={modify}>valider</button></div>}
             </div>
                 
