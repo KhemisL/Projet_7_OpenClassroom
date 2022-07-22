@@ -1,6 +1,6 @@
 # Projet_7_OpenClassroom
     Clonez le Projet avec:
-        - git clone https://github.com/KhemisL/Projet_6_OpenClassroom.git
+        - git clone https://github.com/KhemisL/Projet_7_OpenClassroom.git
 
 # Lancement du Back-end
     Placez-vous dans le dossier back avec:
@@ -16,7 +16,7 @@
 
 # Installation du Front-end
     Placez-vous dans le dossier frontEnd avec:
-        - cd frontEnd
+        - cd front
     Puis installez l'application avec:
         - npm install (S'il y a des vulnérabilités trouvées faite un ==> npm audit fix)
     Pour finir lancez l'application avec:
