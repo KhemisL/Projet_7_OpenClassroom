@@ -3,9 +3,6 @@ import { useState } from 'react';
 import Login from './Login';
 import axios from "axios"
 const Signup = () => {
-
-
-    
     const [lastName, setLastName] = useState("")
     const [firstName, setFirstName] = useState("")
     const [pseudo, setPseudo] = useState("")
@@ -16,7 +13,6 @@ const Signup = () => {
         e.preventDefault()
         const error = document.querySelector(".error");
         const sign = document.querySelector(".sign");
-        
 
         axios({
             method: "post",

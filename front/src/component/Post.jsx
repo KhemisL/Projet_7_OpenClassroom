@@ -8,7 +8,6 @@ const Post = ({post, newpost, set}) => {
     const [file, setFile] = useState()
     const id = useContext(UserIdContext)
     
-
     const handlePicture = (e) => {
         setImageUrl(URL.createObjectURL(e.target.files[0]))
 
@@ -30,9 +29,6 @@ const Post = ({post, newpost, set}) => {
                  set([...post, newpost])
             })
             .catch(err => console.log(err))
-
-            
-           
 
         }else{
             alert("veuillez entrez un message")

@@ -1,7 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Profil from "./pages/Profil";
 import "../src/styles/index.scss"
-import Home from "./pages/Home";
 import EditProfil from "./component/EditProfil";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -16,16 +15,10 @@ function App() {
       axios("http://localhost:3000/jwtid", {withCredentials: true})
      .then((res) => setUid(res.data))
      .catch((err)=> console.log(err))
-
-     
  },[uid])
-
-
-    
 
   return (
 
-    
       <UserIdContext.Provider value={uid}>
         <BrowserRouter>
           <Routes>
@@ -35,13 +28,6 @@ function App() {
           </Routes>
         </BrowserRouter>
         </UserIdContext.Provider>
-    
-    
-    
-      
-        
-      
-      
     
   );
 }

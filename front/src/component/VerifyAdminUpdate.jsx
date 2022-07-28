@@ -41,9 +41,7 @@ const VerifyAdmin = ({props, test, set}) => {
         .then((res)=> {
                 modifyPost()
         })
-        .catch(err => console.log(err))
-
-        
+        .catch(err => console.log(err))   
     }
     useEffect(()=>{
         axios(`http://localhost:3000/api/auth/${props}`)
@@ -69,14 +67,7 @@ const VerifyAdmin = ({props, test, set}) => {
                     <div className="edit">
                         {data.isAdmin === true ? ( <div className='container-suppr'><i onClick={suppr} className="fa-solid fa-xmark"></i></div>) : (props === test.userId && <div className='container-suppr'><i onClick={suppr} className="fa-solid fa-xmark"></i></div>)}
                     </div>
-
-
-                    
                 </div> 
-            
-
-            
-            
         </div>
     );
 };

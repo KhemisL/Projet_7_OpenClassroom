@@ -16,11 +16,6 @@ const CardThread = ({post, set}) => {
         return dateData.toString()
     }
 
-    
-
-    
-
-    
     return (
         <div className="container-card-thread">
             <div className="pseudo-data"> 
